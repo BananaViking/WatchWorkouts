@@ -5,6 +5,7 @@
 //  Created by J S on 6/9/21.
 //
 
+import HealthKit
 import SwiftUI
 
 struct SummaryView: View {
@@ -37,6 +38,9 @@ struct SummaryView: View {
                 SummaryMetricView(title: "Avg. Heart Rate",
                                   value: 143.description + " bpm"
                 ).accentColor(.red)
+                Text("Activity Rings")
+                ActivityRingsView(healthStore: HKHealthStore()
+                ).frame(width: 50, height: 50)
                 Button("Done") {
                 }
             }
