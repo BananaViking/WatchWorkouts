@@ -21,10 +21,12 @@
 		0520308C267166EF00372E09 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0520308B267166EF00372E09 /* Preview Assets.xcassets */; };
 		05203098267166EF00372E09 /* WatchWorkoutsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05203097267166EF00372E09 /* WatchWorkoutsTests.swift */; };
 		052030A3267166EF00372E09 /* WatchWorkoutsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052030A2267166EF00372E09 /* WatchWorkoutsUITests.swift */; };
+		055DA4482672D5E100776C21 /* WatchWorkoutsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055DA4472672D5E100776C21 /* WatchWorkoutsApp.swift */; };
 		05848E3A26718F1B00D09760 /* ElapsedTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05848E3926718F1B00D09760 /* ElapsedTimeView.swift */; };
 		05848E3C2671946500D09760 /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05848E3B2671946500D09760 /* ControlsView.swift */; };
 		05848E3E26719A9600D09760 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05848E3D26719A9600D09760 /* SummaryView.swift */; };
 		05848E402671A41A00D09760 /* ActivityRingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05848E3F2671A41A00D09760 /* ActivityRingsView.swift */; };
+		05848E422671AFFA00D09760 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05848E412671AFFA00D09760 /* WorkoutManager.swift */; };
 		05CAD19E26716E2A0046E30E /* SessionPagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CAD19D26716E2A0046E30E /* SessionPagingView.swift */; };
 		05CAD1A0267170550046E30E /* MetricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CAD19F267170550046E30E /* MetricsView.swift */; };
 /* End PBXBuildFile section */
@@ -108,10 +110,12 @@
 		0520309E267166EF00372E09 /* WatchWorkoutsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WatchWorkoutsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		052030A2267166EF00372E09 /* WatchWorkoutsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchWorkoutsUITests.swift; sourceTree = "<group>"; };
 		052030A4267166EF00372E09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		055DA4472672D5E100776C21 /* WatchWorkoutsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchWorkoutsApp.swift; sourceTree = "<group>"; };
 		05848E3926718F1B00D09760 /* ElapsedTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElapsedTimeView.swift; sourceTree = "<group>"; };
 		05848E3B2671946500D09760 /* ControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
 		05848E3D26719A9600D09760 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		05848E3F2671A41A00D09760 /* ActivityRingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRingsView.swift; sourceTree = "<group>"; };
+		05848E412671AFFA00D09760 /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
 		05CAD19D26716E2A0046E30E /* SessionPagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPagingView.swift; sourceTree = "<group>"; };
 		05CAD19F267170550046E30E /* MetricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -177,21 +181,23 @@
 		0520307B267166EE00372E09 /* WatchWorkouts WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				0520307C267166EE00372E09 /* HostingController.swift */,
-				0520307E267166EE00372E09 /* StartView.swift */,
-				05848E3D26719A9600D09760 /* SummaryView.swift */,
+				0520308E267166EF00372E09 /* PushNotificationPayload.apns */,
+				0520308D267166EF00372E09 /* Info.plist */,
 				05848E3F2671A41A00D09760 /* ActivityRingsView.swift */,
-				05CAD19D26716E2A0046E30E /* SessionPagingView.swift */,
-				05CAD19F267170550046E30E /* MetricsView.swift */,
+				05203086267166EE00372E09 /* ComplicationController.swift */,
 				05848E3B2671946500D09760 /* ControlsView.swift */,
 				05848E3926718F1B00D09760 /* ElapsedTimeView.swift */,
 				05203080267166EE00372E09 /* ExtensionDelegate.swift */,
+				0520307C267166EE00372E09 /* HostingController.swift */,
+				05CAD19F267170550046E30E /* MetricsView.swift */,
 				05203082267166EE00372E09 /* NotificationController.swift */,
 				05203084267166EE00372E09 /* NotificationView.swift */,
-				05203086267166EE00372E09 /* ComplicationController.swift */,
+				05CAD19D26716E2A0046E30E /* SessionPagingView.swift */,
+				0520307E267166EE00372E09 /* StartView.swift */,
+				055DA4472672D5E100776C21 /* WatchWorkoutsApp.swift */,
+				05848E3D26719A9600D09760 /* SummaryView.swift */,
+				05848E412671AFFA00D09760 /* WorkoutManager.swift */,
 				05203088267166EF00372E09 /* Assets.xcassets */,
-				0520308D267166EF00372E09 /* Info.plist */,
-				0520308E267166EF00372E09 /* PushNotificationPayload.apns */,
 				0520308A267166EF00372E09 /* Preview Content */,
 			);
 			path = "WatchWorkouts WatchKit Extension";
@@ -417,10 +423,12 @@
 				05203081267166EE00372E09 /* ExtensionDelegate.swift in Sources */,
 				05203085267166EE00372E09 /* NotificationView.swift in Sources */,
 				05CAD1A0267170550046E30E /* MetricsView.swift in Sources */,
+				055DA4482672D5E100776C21 /* WatchWorkoutsApp.swift in Sources */,
 				05848E3A26718F1B00D09760 /* ElapsedTimeView.swift in Sources */,
 				05848E3C2671946500D09760 /* ControlsView.swift in Sources */,
 				05848E402671A41A00D09760 /* ActivityRingsView.swift in Sources */,
 				05203087267166EE00372E09 /* ComplicationController.swift in Sources */,
+				05848E422671AFFA00D09760 /* WorkoutManager.swift in Sources */,
 				05848E3E26719A9600D09760 /* SummaryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
