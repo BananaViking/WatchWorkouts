@@ -9,5 +9,5 @@ import HealthKit
 import Foundation
 
 class WorkoutManager: NSObject, ObservableObject {
-    
+    var selectedWorkout: HKWorkoutActivityType?
 }
