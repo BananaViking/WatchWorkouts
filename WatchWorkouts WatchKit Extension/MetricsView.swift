@@ -35,7 +35,6 @@ struct MetricsView: View {
                 .lowercaseSmallCaps()
         )
         .frame(maxWidth: .infinity, alignment: .leading)
-        .ignoresSafeArea(edges: /*@START_MENU_TOKEN@*/.bottom/*@END_MENU_TOKEN@*/)
         .padding()
     }
 }
