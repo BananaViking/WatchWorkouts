@@ -26,6 +26,9 @@ struct StartView: View {
         }
         .listStyle(CarouselListStyle())
         .navigationBarTitle("Workouts")
+        .onAppear {
+            workoutManager.requestAuthorization()
+        }
     }
 }
 
