@@ -8,26 +8,34 @@
 import SwiftUI
 
 struct MetricsView: View {
+    @EnvironmentObject var workoutManager: WorkoutManager
+    
     var body: some View {
         VStack(alignment: .leading) {
             ElapsedTimeView(
-                elapsedTime: 3 * 60 + 15.24,
+                elapsedTime: workoutManager.builder?.elapsedTime ?? 0,
                 showSubseconds: true
             ).foregroundColor(.yellow)
             Text(
                 Measurement(
-                    value: 47,
+                    value: workoutManager.activeEnergy,
                     unit: UnitEnergy.kilocalories
-                ).description
+                ).formatted(
+                    .measurement(
+                        width: .abbreviated,
+                        usage: .workout,
+                        numberFormat: .numeric(precision: .fractionLength(0))
+                    )
+                )
             )
             Text(
-                153.description + " bpm"
+                workoutManager.heartRate.formatted(.number.precision(.fractionLength(0))) + " bpm"
             )
             Text(
                 Measurement(
-                    value: 515,
+                    value: workoutManager.distance,
                     unit: UnitLength.meters
-                ).description
+                ).formatted(.measurement(width: .abbreviated, usage: road))
             )
         }
         .font(.system(.title, design: .rounded)
