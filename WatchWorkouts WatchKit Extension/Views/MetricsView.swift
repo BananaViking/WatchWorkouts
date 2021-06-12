@@ -17,8 +17,9 @@ struct MetricsView: View {
             VStack(alignment: .leading) {
                 ElapsedTimeView(
                     elapsedTime: workoutManager.builder?.elapsedTime ?? 0,
-                    showSubseconds: true
+                    showSubseconds: context.cadence == .live
                 ).foregroundColor(.yellow)
+                
                 Text(
                     Measurement(
                         value: workoutManager.activeEnergy,
@@ -31,9 +32,11 @@ struct MetricsView: View {
                         )
                     )
                 )
+                
                 Text(
                     workoutManager.heartRate.formatted(.number.precision(.fractionLength(0))) + " bpm"
                 )
+                
                 Text(
                     Measurement(
                         value: workoutManager.distance,
